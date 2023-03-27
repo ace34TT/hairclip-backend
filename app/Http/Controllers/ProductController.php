@@ -16,7 +16,10 @@ class ProductController extends Controller
     {
         return Product::getAllWithTopView();
     }
-
+    public function getAllWithPng()
+    {
+        return Product::getAlWithPng();
+    }
     /**
      * Show the form for creating a new resource.
      *

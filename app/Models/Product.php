@@ -17,4 +17,13 @@ class Product extends Model
             ->where("images.type", "=", 'top_view')
             ->get();
     }
+
+    public static function getAlWithPng()
+    {
+        return DB::table('products')
+            ->join('images', 'products.id', '=', 'images.product_id')
+            ->select('products.*', 'images.file_name')
+            ->where("images.type", "=", 'cropped_view')
+            ->get();
+    }
 }
