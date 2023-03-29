@@ -29,7 +29,8 @@ class OrderController extends Controller
             $output = [
                 'clientSecret' => $paymentIntent->client_secret,
             ];
-            return response()->json($output, 200);
+            return response()->json($output, 200)->header('Access-Control-Allow-Origin', '*')
+                ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');;;
         } catch (Error $e) {
             return response()->json(["error" => $e->getMessage()], 500)->header('Access-Control-Allow-Origin', '*')
                 ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');;
