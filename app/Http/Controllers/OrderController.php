@@ -17,21 +17,21 @@ class OrderController extends Controller
 {
     public function generateClient(Request $request)
     {
-        $total = $request->get("total");
-        // dd(env(key: "SK_STRIPE"));
-        try {
-            Stripe::setApiKey(env(key: "SK_STRIPE"));
-            $paymentIntent = PaymentIntent::create([
-                "amount" =>  $total * 100,
-                'currency' => 'eur',
-            ]);
-            $output = [
-                'clientSecret' => $paymentIntent->client_secret,
-            ];
-            return response()->json($output, 200)->header("Access-Control-Allow-Origin",  "*");
-        } catch (Error $e) {
-            return response()->json(["error" => $e->getMessage()], 500);
-        }
+        // $total = $request->get("total");
+        // try {
+        //     Stripe::setApiKey(env(key: "SK_STRIPE"));
+        //     $paymentIntent = PaymentIntent::create([
+        //         "amount" =>  $total * 100,
+        //         'currency' => 'eur',
+        //     ]);
+        //     $output = [
+        //         'clientSecret' => $paymentIntent->client_secret,
+        //     ];
+        //     return response()->json($output, 200)->header("Access-Control-Allow-Origin",  "*");
+        // } catch (Error $e) {
+        //     return response()->json(["error" => $e->getMessage()], 500);
+        // }
+        return response()->json(["success" => true]);
     }
 
     public function paymentSuccess(Request $request)
