@@ -18,13 +18,12 @@ class OrderController extends Controller
     public function generateClient(Request $request)
     {
         $total = $request->get("total");
-        $total = $total < 21 ? $total + 1.99 : $total + 4.99;
+        // dd(env(key: "SK_STRIPE"));
         try {
             Stripe::setApiKey(env(key: "SK_STRIPE"));
             $paymentIntent = PaymentIntent::create([
                 "amount" =>  $total * 100,
                 'currency' => 'eur',
-                "payment_method_types" => ["card"]
             ]);
             $output = [
                 'clientSecret' => $paymentIntent->client_secret,
@@ -38,9 +37,7 @@ class OrderController extends Controller
     public function paymentSuccess(Request $request)
     {
         $data = $request->all();
-        // dd($data["client_secret"]);
         $key = substr(explode("secret", $data["client_secret"], -1)[0], 0, -1);
-        // dd($key);
         Stripe::setApiKey(env(key: "SK_STRIPE"));
         $paymentIntent = PaymentIntent::retrieve($key,  ['expand' => ['payment_method']]);
         $currentDate = now();
