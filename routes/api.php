@@ -25,4 +25,4 @@ Route::resource('products', ProductController::class);
 Route::get("media/images/{filename}", [MediaController::class, "serveFile"]);
 //
 Route::post("/orders/generate-stripe-client", [OrderController::class, "generateClient"]);
-Route::post("/orders", [OrderController::class, "paymentSuccess"]);
+Route::middleware(["cors"])->post("/orders", [OrderController::class, "paymentSuccess"]);
