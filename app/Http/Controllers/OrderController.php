@@ -31,7 +31,8 @@ class OrderController extends Controller
             ];
             return response()->json($output, 200);
         } catch (Error $e) {
-            return response()->json(["error" => $e->getMessage()], 500);
+            return response()->json(["error" => $e->getMessage()], 500)->header('Access-Control-Allow-Origin', '*')
+                ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');;
         }
     }
 
