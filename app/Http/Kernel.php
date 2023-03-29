@@ -22,6 +22,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \Fruitcake\Cors\HandleCors::class, # this line
     ];
 
     /**
@@ -44,6 +45,7 @@ class Kernel extends HttpKernel
             'throttle:api',
             // \Fruitcake\Cors\HandleCors::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Fruitcake\Cors\HandleCors::class, # this line
         ],
     ];
 
