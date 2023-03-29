@@ -1,0 +1,10 @@
+[27-Mar-2023 13:37:10 UTC] PHP Warning:  require(/home/ndps4070/hairclip-v2-server.miarajoris.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/ndps4070/hairclip-v2-server.miarajoris.com/public/index.php on line 34
+[27-Mar-2023 13:37:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ndps4070/hairclip-v2-server.miarajoris.com/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ndps4070/hairclip-v2-server.miarajoris.com/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/ndps4070/hairclip-v2-server.miarajoris.com/public/index.php on line 34
+[27-Mar-2023 13:37:12 UTC] PHP Warning:  require(/home/ndps4070/hairclip-v2-server.miarajoris.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/ndps4070/hairclip-v2-server.miarajoris.com/public/index.php on line 34
+[27-Mar-2023 13:37:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ndps4070/hairclip-v2-server.miarajoris.com/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ndps4070/hairclip-v2-server.miarajoris.com/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/ndps4070/hairclip-v2-server.miarajoris.com/public/index.php on line 34

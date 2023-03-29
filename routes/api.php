@@ -24,4 +24,5 @@ Route::get("products/shop", [ProductController::class, "getAllWithPng"]);
 Route::resource('products', ProductController::class);
 Route::get("media/images/{filename}", [MediaController::class, "serveFile"]);
 //
-Route::post("/order/generate-stripe-client", [OrderController::class, "generateClient"]);
+Route::post("/orders/generate-stripe-client", [OrderController::class, "generateClient"]);
+Route::post("/orders", [OrderController::class, "paymentSuccess"]);
