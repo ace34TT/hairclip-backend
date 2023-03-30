@@ -21,6 +21,11 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
+
+
 Route::get("products/shop", [ProductController::class, "getAllWithPng"]);
 Route::resource('products', ProductController::class);
 Route::get("media/images/{filename}", [MediaController::class, "serveFile"]);
