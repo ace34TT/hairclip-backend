@@ -31,6 +31,7 @@ class OrderController extends Controller
         // } catch (Error $e) {
         //     return response()->json(["error" => $e->getMessage()], 500);
         // }
+        return response()->json(["message" => "ok"]);
     }
 
     public function paymentSuccess(Request $request)
